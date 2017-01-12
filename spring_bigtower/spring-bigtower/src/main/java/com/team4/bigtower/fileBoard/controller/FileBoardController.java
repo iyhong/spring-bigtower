@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team4.bigtower.HomeController;
 import com.team4.bigtower.fileBoard.service.FileBoard;
+import com.team4.bigtower.fileBoard.service.FileBoardService;
 
 @Controller
 public class FileBoardController {

@@ -1,0 +1,14 @@
+멤버변수가 없거나 상수일경우 클래스는 객체를 여러개 생성할 필요가 없음, 그래서 생성자를 private 으로 잠궈 static 메서드로 사용하기도함(ex.math클래스)
+
+instanceof (연산자)
+객체 + instanceof + 타입 -> 다형성연산자
+
+invoke()
+
+reflection API
+
+
+
+
+
+
