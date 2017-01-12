@@ -1,0 +1,44 @@
+db생성쿼리
+
+member테이블
+
+CREATE TABLE `member` (
+	`m_id` VARCHAR(50) NOT NULL,
+	`m_pw` VARCHAR(50) NULL DEFAULT NULL,
+	`m_name` VARCHAR(50) NULL DEFAULT NULL,
+	`m_level` VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY (`m_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+file 테이블
+
+CREATE TABLE `file` (
+	`f_no` INT(10) NOT NULL AUTO_INCREMENT,
+	`f_name` VARCHAR(50) NULL DEFAULT NULL,
+	`f_path` VARCHAR(50) NULL DEFAULT NULL,
+	`b_no` INT(10) NULL DEFAULT NULL,
+	PRIMARY KEY (`f_no`),
+	INDEX `FK_file_board` (`b_no`),
+	CONSTRAINT `FK_file_board` FOREIGN KEY (`b_no`) REFERENCES `board` (`b_no`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;
+
+
+board테이블
+
+CREATE TABLE `board` (
+	`b_no` INT(10) NOT NULL AUTO_INCREMENT,
+	`b_title` VARCHAR(50) NULL DEFAULT NULL,
+	`b_content` VARCHAR(50) NULL DEFAULT NULL,
+	`m_id` VARCHAR(50) NULL DEFAULT NULL,
+	`b_pw` VARCHAR(50) NULL DEFAULT NULL,
+	`b_date` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`b_no`),
+	INDEX `FK_board_member` (`m_id`),
+	CONSTRAINT `FK_board_member` FOREIGN KEY (`m_id`) REFERENCES `member` (`m_id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB;

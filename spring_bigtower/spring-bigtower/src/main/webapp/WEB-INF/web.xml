@@ -28,8 +28,8 @@
 	<!-- mutipart를 사용하려면 DsipatcherServlet에 사용한다고 등록해야함 -->
 	<multipart-config>
 		<!-- 임시폴더 위치 -->
-		<location>/Users/hong-in-yong/Documents</location>
-		<!-- <location>d://temp</location> -->
+		<!-- <location>/Users/hong-in-yong/Documents</location> -->
+		<location>D:\temp</location>
 		
 		<max-file-size>-1</max-file-size>
 		<max-request-size>-1</max-request-size>

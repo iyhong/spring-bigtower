@@ -32,7 +32,8 @@ public class FileBoardServiceImpl implements FileBoardService{
 		try {
 			Board board = new Board();
 			Files files = new Files();
-			String path = "/Users/hong-in-yong/Documents/workspace_sts/git/spring-mvc-bigtower/spring-bigtower/spring_bigtower/spring-bigtower/src/main/resources/upload";
+			String path= "D:/honginyong/workspace_sts/git/spring-bigtower/spring-bigtower/spring_bigtower/spring-bigtower/src/main/resources/upload/";
+			//String path = "/Users/hong-in-yong/Documents/workspace_sts/git/spring-mvc-bigtower/spring-bigtower/spring_bigtower/spring-bigtower/src/main/resources/upload/";
 			//String path = "D:/jjdev/workspace_sts/git/spring_bigtower/spring-bigtower/src/main/resources/upload/";
 			//conn.setAutoCommit(false);
 			board.setbTitle(fileBoard.getbTitle());
@@ -46,8 +47,10 @@ public class FileBoardServiceImpl implements FileBoardService{
 			//throw new RuntimeException();
 			
 			List<MultipartFile> multipartFileList = fileBoard.getMultipartFileList();
+			logger.debug("파일사이즈 : {}",multipartFileList.size());
 			for(int i= 0; i<multipartFileList.size();i++){
-				int index = multipartFileList.get(i).getOriginalFilename().indexOf(".");
+				int index = multipartFileList.get(i).getOriginalFilename().lastIndexOf(".");
+				logger.debug("{}", index);
 				String extention = multipartFileList.get(i).getOriginalFilename().substring(index);
 				UUID uuid = UUID.randomUUID();
 				String fileName = uuid.toString().replace("-", "");

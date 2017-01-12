@@ -40,7 +40,7 @@
 		<property name="url"
 			value="jdbc:mysql://127.0.0.1:3306/bigtower?useUnicode=true&amp;characterEncoding=utf-8" />
 		<property name="username" value="root" />
-		<property name="password" value="1234" />
+		<property name="password" value="java0000" />
 	</bean>
 	<!-- mybatis 세션생성을 위한 팩토리 생성 -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
