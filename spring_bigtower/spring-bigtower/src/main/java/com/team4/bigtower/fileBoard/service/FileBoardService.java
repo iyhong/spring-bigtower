@@ -4,5 +4,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 public interface FileBoardService {
-	public int fileBoardAdd(FileBoard fileBoard);
+	public int fileBoardAdd(FileBoardCommand fileBoard);
 }

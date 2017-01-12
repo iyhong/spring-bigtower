@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-public class FileBoard {
+public class FileBoardCommand {
 	private int bNo;
 	private String bTitle;
 	private String bContent;

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.team4.bigtower.HomeController;
-import com.team4.bigtower.fileBoard.service.FileBoard;
+import com.team4.bigtower.fileBoard.service.FileBoardCommand;
 import com.team4.bigtower.fileBoard.service.FileBoardService;
 
 @Controller
@@ -25,10 +25,10 @@ public class FileBoardController {
 	}
 	
 	@RequestMapping(value="/fileBoardAdd",method=RequestMethod.POST)
-	public String fileBoardAdd(FileBoard fileBoard){
+	public String fileBoardAdd(FileBoardCommand fileBoardCommand){
 		logger.debug("fileBoardAdd() POST 호출");
-		logger.debug("{}",fileBoard);
-		int rowCount = fileBoardService.fileBoardAdd(fileBoard);
+		logger.debug("{}",fileBoardCommand);
+		int rowCount = fileBoardService.fileBoardAdd(fileBoardCommand);
 		if(rowCount > 1){
 			logger.debug("삽입 성공");
 			logger.debug("실행쿼리row수 :{}",rowCount);
@@ -36,5 +36,12 @@ public class FileBoardController {
 		}
 		logger.debug("삽입 실패");
 		return "redirect:/fileBoard/fileBoardAdd";
+	}
+	@RequestMapping(value="/fileBoardList",method=RequestMethod.GET)
+	public String fileBoardList(){
+		logger.debug("fileBoardList() GET ");
+		fileBoardService.get
+		
+		return "/fileBoard/fileBoardList";
 	}
 }

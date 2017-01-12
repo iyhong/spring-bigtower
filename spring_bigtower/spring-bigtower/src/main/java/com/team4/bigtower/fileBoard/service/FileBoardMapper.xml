@@ -32,5 +32,22 @@
  			#{bNo}
  		)
  </insert>
+ 
+ <select id="boardList" resultType="com.team4.bigtower.fileBoard.service.BoardFilesCommand">
+ 	select
+ 		b_no as bNo,
+ 		b_title as bTitle,
+ 		b_content as bContent,
+ 		b_date as bDate
+	from board
+ </select>
+ <select id="fileList" parameterType="int" resultType="com.team4.bigtower.fileBoard.service.Files">
+ 	select
+ 		f_no as fNo,
+ 		f_name as fName,
+ 		f_path as fPath
+ 	from file
+ 	where b_no = #{bNo}
+ </select>
 </mapper>
 
