@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
 public interface FileBoardService {
+	@Transactional
 	public int fileBoardAdd(FileBoardCommand fileBoard);
 
 	public List<BoardFilesCommand> getBoardFilesList();

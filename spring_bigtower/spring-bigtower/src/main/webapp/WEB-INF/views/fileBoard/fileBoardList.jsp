@@ -27,13 +27,13 @@
 			<td>${bf.bDate}</td>
 			<td>
 				<c:forEach items="${bf.filesList}" var="filesList">
-					<a href="${filesList.fPath}.${filesList.fName}">${filesList.fName}</a> 
+					<a href="/resources/${filesList.fName}">${filesList.fPath}${filesList.fName}</a> 
 				</c:forEach>
 			</td>
 		</tr>
-		
 		</c:forEach>
 	</table>
-	
+	<a href="\resources\upload\1.jpg">ddddd</a>
+	<a href="http://www.naver.com">ddddd</a>
 </body>
 </html>

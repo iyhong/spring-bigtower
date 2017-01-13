@@ -20,7 +20,7 @@ public class FileBoardController {
 	@Autowired
 	private FileBoardService fileBoardService;
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(FileBoardController.class);
 	
 	@RequestMapping(value="/fileBoardAdd",method=RequestMethod.GET)
 	public String fileBoardAdd(){
