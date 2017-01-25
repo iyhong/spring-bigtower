@@ -1,0 +1,53 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="FileBoard">
+ <insert id="boardAdd" parameterType="com.team4.bigtower.fileBoard.service.Board"
+ 			useGeneratedKeys="true" keyProperty="bNo">
+	INSERT INTO board(
+		b_title,
+		b_content,
+		m_id,
+		b_pw,
+		b_date
+	) values (
+		#{bTitle},
+		#{bContent},
+		#{mId},
+		#{bPw},
+		now()
+	)
+ 	
+ </insert>
+ 
+ <insert id="fileAdd" parameterType="com.team4.bigtower.fileBoard.service.Files">
+ 		INSERT INTO file(
+ 			f_name,
+ 			f_path,
+ 			b_no
+ 		) values (
+ 			#{fName},
+ 			#{fPath},
+ 			#{bNo}
+ 		)
+ </insert>
+ 
+ <select id="boardList" resultType="com.team4.bigtower.fileBoard.service.BoardFilesCommand">
+ 	select
+ 		b_no as bNo,
+ 		b_title as bTitle,
+ 		b_content as bContent,
+ 		b_date as bDate
+	from board
+ </select>
+ <select id="fileList" parameterType="int" resultType="com.team4.bigtower.fileBoard.service.Files">
+ 	select
+ 		f_no as fNo,
+ 		f_name as fName,
+ 		f_path as fPath
+ 	from file
+ 	where b_no = #{bNo}
+ </select>
+</mapper>
+
